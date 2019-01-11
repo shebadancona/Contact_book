@@ -68,7 +68,6 @@ class Contact
         x
       end
     end
-
   end
 
   # This method should delete all of the contacts
