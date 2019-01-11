@@ -35,7 +35,7 @@ class Contact
   def self.find(id)
     @@contact_list.each do |x|
         if @id = id
-          return x
+          x
         end
       end
   end
@@ -50,10 +50,10 @@ class Contact
       elsif item == "last_name"
           self.last_name = new_item
       elsif
-        item = "email"
+        item == "email"
         self.email = new_item
       else
-        item = "note"
+        item == "note"
           self.note = new_item
       end
   end
@@ -62,7 +62,12 @@ class Contact
   # but it should allow you to search for a contact using attributes other than id
   # by specifying both the name of the attribute and the value
   # eg. searching for 'first_name', 'Betty' should return the first contact named Betty
-  def self.find_by
+  def self.find_by(attribute, value)
+    @@contact_list.each do |x|
+      if attribute = value
+        x
+      end
+    end
 
   end
 
@@ -84,11 +89,11 @@ class Contact
   # Feel free to add other methods here, if you need them.
 end
 
-sarah=Contact.create("Sara", "Imainu", "sara@gmail.com", "best person ever")
-# 
-# p Contact.find 1
+sarah=Contact.create("Sara", "Imeinu", "sara@gmail.com", "best person ever")
+chana=Contact.create("Chana", "Imeinu", "chana@gmail.com", "made se")
+# p Contact.find 2
 sarah.update("first_name", "Sarah")
 # sarah.update("last_name", "Sarah")
 # sarah.update("email", "Sarah")
 # sarah.update("note", "Sarah")
-p Contact.all
+p Contact.find_by(@last_name, "Imeinu")
