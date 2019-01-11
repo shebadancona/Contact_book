@@ -44,8 +44,18 @@ class Contact
   # 1. which of the contact's attributes you want to update
   # 2. the new value for that attribute
   # and then make the appropriate change to the contact
-  def update
-
+  def update(item, new_item)
+      if item == "first_name"
+        self.first_name = new_item
+      elsif item == "last_name"
+          self.last_name = new_item
+      elsif
+        item = "email"
+        self.email = new_item
+      else
+        item = "note"
+          self.note = new_item
+      end
   end
 
   # This method should work similarly to the find method above
@@ -74,6 +84,11 @@ class Contact
   # Feel free to add other methods here, if you need them.
 end
 
-Contact.create("Sara", "Imainu", "sara@gmail.com", "best person ever")
- p Contact.all
-p Contact.find 1
+sarah=Contact.create("Sara", "Imainu", "sara@gmail.com", "best person ever")
+# 
+# p Contact.find 1
+sarah.update("first_name", "Sarah")
+# sarah.update("last_name", "Sarah")
+# sarah.update("email", "Sarah")
+# sarah.update("note", "Sarah")
+p Contact.all
