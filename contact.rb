@@ -8,10 +8,12 @@ class Contact
 
   # This method should initialize the contact's attributes
   def initialize(first_name, last_name,email,note)
-    @first_nmme = first_name
+    @first_name = first_name
     @last_name = last_name
     @email = email
     @note = note
+    @id = @@id
+    @@id +=1
 
   end
 
@@ -19,6 +21,9 @@ class Contact
   # store the newly created contact, and then return it
   def self.create(first_name, last_name, email, note)
     new_contact = Contact.new
+    @@contacts << new_contact
+  return new_contact
+end
 
   end
 
