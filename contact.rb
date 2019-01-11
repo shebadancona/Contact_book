@@ -21,15 +21,15 @@ class Contact
   # store the newly created contact, and then return it
   def self.create(first_name, last_name, email, note)
     new_contact = Contact.new
-    @@contacts << new_contact
+    @@contact_list << new_contact
   return new_contact
-end
+  end
 
   end
 
   # This method should return all of the existing contacts
   def self.all
-
+    return @@contact_list
   end
 
   # This method should accept an id as an argument
@@ -70,5 +70,6 @@ end
   end
 
   # Feel free to add other methods here, if you need them.
-  
 end
+
+ puts Contact.all
