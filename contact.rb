@@ -73,11 +73,11 @@ class Contact
 
   # This method should delete all of the contacts
   def self.delete_all
-
+    @@contact_list = []
   end
 
   def full_name
-
+     return "#{first_name}  #{last_name}"
   end
 
   # This method should delete the contact
@@ -92,8 +92,16 @@ end
 sarah=Contact.create("Sara", "Imeinu", "sara@gmail.com", "best person ever")
 chana=Contact.create("Chana", "Imeinu", "chana@gmail.com", "made se")
 # p Contact.find 2
-sarah.update("first_name", "Sarah")
-# sarah.update("last_name", "Sarah")
-# sarah.update("email", "Sarah")
-# sarah.update("note", "Sarah")
-p Contact.find_by(@last_name, "Imeinu")
+# sarah.update("first_name", "Sarah")
+# # sarah.update("last_name", "Sarah")
+# # sarah.update("email", "Sarah")
+# # sarah.update("note", "Sarah")
+# p Contact.find_by(@last_name, "Imeinu")
+
+
+Contact.delete_all
+p  sarah
+
+p Contact.all
+
+p Contact.find 2
