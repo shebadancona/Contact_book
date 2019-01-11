@@ -20,11 +20,9 @@ class Contact
   # This method should call the initializer, 
   # store the newly created contact, and then return it
   def self.create(first_name, last_name, email, note)
-    new_contact = Contact.new
+    new_contact = Contact.new(first_name, last_name, email, note)
     @@contact_list << new_contact
   return new_contact
-  end
-
   end
 
   # This method should return all of the existing contacts
@@ -72,4 +70,5 @@ class Contact
   # Feel free to add other methods here, if you need them.
 end
 
- puts Contact.all
+Contact.create("Sara", "Imainu", "sara@gmail.com", "best person ever")
+ p Contact.all
