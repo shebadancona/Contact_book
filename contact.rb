@@ -74,6 +74,6 @@ class Contact
   # Feel free to add other methods here, if you need them.
 end
 
-Contact.create("Sara", "Imainu", "sara@gmail.com", "best person ever")
+sara = Contact.create("Sara", "Imainu", "sara@gmail.com", "best person ever")
  p Contact.all
 p Contact.find 1
