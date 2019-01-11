@@ -1,13 +1,24 @@
 class Contact
 
+  @@contact_list = []
+  @@id = 1
+  attr_reader :id
+  attr_accessor :first_name, :last_name, :email, :note
+
+
   # This method should initialize the contact's attributes
-  def initialize
+  def initialize(first_name, last_name,email,note)
+    @first_nmme = first_name
+    @last_name = last_name
+    @email = email
+    @note = note
 
   end
 
   # This method should call the initializer, 
   # store the newly created contact, and then return it
-  def self.create
+  def self.create(first_name, last_name, email, note)
+    new_contact = Contact.new
 
   end
 
